@@ -545,6 +545,37 @@
                 font-size: 13px;
             }
         }
+        /* ACADEMY CUSTOMIZATION STYLING */
+        .customization-section{
+            padding: 60px 20px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        #customization{
+            max-width: 500px;
+            margin: 25px auto;
+            text-align: left;
+        }
+        #customizationForm label{
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        #customizationForm input{
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #customizationForm button {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #d71920;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -554,7 +585,7 @@
     <header>
         <div class="container navbar">
 
-            <a href="#home" class="logo">
+            <a href="#home" class="logo" id="academyName">
                 TOP<span>SPOT</span> SOCCER
             </a>
 
@@ -973,6 +1004,26 @@
 
         </div>
     </footer>
+
+    <!--ACADEMY CUSTOMIZATION-->
+    <section id="customize" class="customization-section">
+        <div class="container">
+            <h2>Customize your Academy</h2>
+            <p>Update your academy's details.</p>
+            <form id="customizationform">
+                <label>Academy Name</label>
+                <input type="text" id="nameInput" placeholder="Enter Academy Name"required>
+                <label>Welcome Messsage</label>
+                <input type="text" id="messageInput" placeholder="Enter welcome message">
+                <label>Brand Colour</label>
+                <input type="color" id="colorInput" value=""#d71920">
+                <label>Contact Details</label>
+                <input type="text" id="contactInput" placeholder="Enter contact details">
+                <button type="submit">Save Changes</button>
+                <p id="saveMessage"></p>
+            </form>
+        </div>
+    </section>
 
     <!-- JAVASCRIPT -->
     <script>
