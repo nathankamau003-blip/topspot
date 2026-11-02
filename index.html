@@ -1044,6 +1044,70 @@
 
                 this.reset();
             });
+            // ACADEMY CUSTOMIZATION
+            const customizationForm =
+            document.getElementById("customizationForm");
+            function
+            applyAcademySettings(settings) {
+                const logo= 
+            document.querySelector(".logo");
+                const footerName = 
+            document.querySelector("footer strong");
+                if (logo) {
+                    logo.textContent = 
+            settings.name.toUpperCase();
+                }
+                if(footerName) {
+                    footerName.textContent = 
+            settings.name;
+                }
+                document.title = settings.name;
+            document.documentElement.style.setProperty(
+                "--primary",
+                settings.color
+            );
+            document.getElementById("nameInput")
+            .value = settings.name;
+            document.getElementById("messageInput")
+            .value = settings.message;
+            document.getElementById("colorInput")
+            .value = settings.color;
+            document.getElementById("contctInput")
+            .value = settings.contact;
+            }
+                event.preventDefault();
+                const settings = {
+                    name: 
+            document.getElementById("nameInput")
+            .value.trim(),
+                    message: 
+            document.getElementById("messageInput")
+            .value.trim(),
+                    color: 
+            document.getElementById("colorInput")
+            .value,
+                    contact: 
+            document.getElementById("contactInput")
+            .value.trim()
+                };
+                if (!settings.name) return;
+                localStorage.setItem(
+                    "topspotSettings",
+                    JSON.stringify(settings)
+                );
+
+                applyAcademySettings(settings);
+
+            document.getElementById("saveMessage").textContent = 
+                    "Changes saved successfully!";});
+
+            // Load previously saved settings
+            const savedSettings = 
+            localStorage.getItem("topspotSettings");
+
+            if (savedSettings) {
+                applyAcademySettings(JSON.parse(savedSettings));
+            }
     </script>
 
 </body>
