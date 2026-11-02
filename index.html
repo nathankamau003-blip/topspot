@@ -19,175 +19,192 @@
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #f4f4f4;
-            color: #111;
+            background: #0b0b0b;
+            color: #ffffff;
             line-height: 1.6;
         }
 
         :root {
             --red: #e50914;
-            --black: #111111;
-            --dark: #1b1b1b;
-            --white: #ffffff;
+            --dark: #0b0b0b;
+            --black: #000000;
+            --grey: #1b1b1b;
+            --light-grey: #cccccc;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h2 span {
+            color: var(--red);
+        }
+
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 80px;
         }
 
         /* NAVIGATION */
 
         header {
-            background: var(--black);
-            color: white;
-            padding: 20px 7%;
+            background: #000000;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--red);
+        }
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
             gap: 20px;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: bold;
-            color: var(--red);
+            color: #ffffff;
+            text-decoration: none;
+            white-space: nowrap;
         }
 
         .logo span {
-            color: white;
+            color: var(--red);
         }
 
         nav {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 18px;
         }
 
         nav a {
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
         }
 
         nav a:hover {
             color: var(--red);
         }
 
-        .nav-button {
+        .nav-register {
             background: var(--red);
-            padding: 10px 18px;
+            padding: 10px 16px;
             border-radius: 5px;
         }
 
-        .nav-button:hover {
-            background: #b80000;
-            color: white;
+        .nav-register:hover {
+            background: #b80710;
+            color: #ffffff;
         }
 
-        /* HERO */
+        /* HOME / HERO */
 
         .hero {
-            background: linear-gradient(135deg, #111, #400000);
-            color: white;
-            padding: 100px 8%;
-            min-height: 450px;
+            min-height: 600px;
             display: flex;
             align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #000000, #1a0000, #0b0b0b);
+            border-bottom: 4px solid var(--red);
         }
 
         .hero-content {
-            max-width: 750px;
+            max-width: 850px;
+            margin: auto;
+            padding: 40px 20px;
         }
 
         .hero h1 {
-            font-size: 56px;
-            line-height: 1.15;
-            margin-bottom: 20px;
+            font-size: 60px;
+            font-weight: 900;
+            margin-bottom: 25px;
+            text-transform: uppercase;
         }
 
         .hero h1 span {
             color: var(--red);
         }
 
-        .hero h2 {
-            font-size: 23px;
-            margin-bottom: 20px;
-        }
-
         .hero p {
-            color: #ddd;
-            font-size: 17px;
-            margin-bottom: 30px;
+            font-size: 20px;
+            color: var(--light-grey);
+            margin-bottom: 35px;
         }
 
-        .button {
+        .btn {
             display: inline-block;
-            padding: 13px 25px;
+            background: var(--red);
+            color: #ffffff;
+            padding: 14px 28px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            margin: 5px;
+            transition: 0.3s;
+            border: 2px solid var(--red);
         }
 
-        .button-red {
-            background: var(--red);
-            color: white;
+        .btn:hover {
+            background: transparent;
+            color: var(--red);
         }
 
-        .button-red:hover {
-            background: #b80000;
+        .btn-outline {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            margin-left: 10px;
         }
 
-        .button-outline {
-            border: 2px solid white;
-            color: white;
-        }
-
-        .button-outline:hover {
-            background: white;
-            color: black;
+        .btn-outline:hover {
+            background: #ffffff;
+            color: #000000;
         }
 
         /* HIGHLIGHTS */
 
         .highlights {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            background: white;
-            padding: 30px 7%;
-            text-align: center;
-            gap: 20px;
+            background: var(--red);
+            padding: 35px 0;
         }
 
-        .highlight h3 {
-            color: var(--red);
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+
+        .highlight-item h3 {
+            font-size: 24px;
             margin-bottom: 8px;
         }
 
-        /* SECTIONS */
-
-        section {
-            padding: 70px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
-
-        .section-title span {
-            color: var(--red);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 40px;
+        .highlight-item p {
+            font-size: 15px;
         }
 
         /* ABOUT */
 
         .about {
-            background: white;
+            background: #111111;
         }
 
         .about-content {
@@ -197,13 +214,22 @@
         }
 
         .about-content p {
-            margin-bottom: 20px;
+            color: var(--light-grey);
+            font-size: 17px;
+            margin-bottom: 18px;
         }
 
         /* PROGRAMS */
 
         .programs {
-            background: #f4f4f4;
+            background: #080808;
+            text-align: center;
+        }
+
+        .section-intro {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--light-grey);
         }
 
         .program-grid {
@@ -213,10 +239,10 @@
         }
 
         .program-card {
-            background: white;
-            border-bottom: 5px solid var(--red);
-            padding: 25px;
-            border-radius: 7px;
+            background: var(--grey);
+            padding: 30px 20px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--red);
             transition: 0.3s;
         }
 
@@ -226,25 +252,20 @@
 
         .program-card h3 {
             color: var(--red);
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            font-size: 21px;
         }
 
-        .age {
-            font-size: 24px;
-            font-weight: bold;
-            color: #111;
-            margin-bottom: 10px;
+        .program-card p {
+            color: var(--light-grey);
+            font-size: 15px;
         }
 
         /* VALUES */
 
         .values {
-            background: var(--black);
-            color: white;
-        }
-
-        .values .section-subtitle {
-            color: #ccc;
+            background: #111111;
+            text-align: center;
         }
 
         .values-grid {
@@ -254,163 +275,274 @@
         }
 
         .value-card {
-            background: #222;
-            padding: 30px;
-            border-left: 4px solid var(--red);
-            border-radius: 5px;
+            padding: 25px;
         }
 
         .value-card h3 {
             color: var(--red);
-            margin-bottom: 12px;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .value-card p {
+            color: var(--light-grey);
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            background: #080808;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #1b1b1b;
+            border: 2px solid var(--red);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .photo-placeholder {
+            height: 230px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaaaaa;
+            font-size: 18px;
+            background: linear-gradient(135deg, #1b1b1b, #111111);
+        }
+
+        /* ACHIEVEMENTS */
+
+        .achievements {
+            background: #111111;
+            text-align: center;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .achievement-card {
+            background: #1b1b1b;
+            padding: 35px 25px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--red);
+        }
+
+        .achievement-icon {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .achievement-card h3 {
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        .achievement-card p {
+            color: var(--light-grey);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #080808;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            font-size: 18px;
+        }
+
+        .contact-info p {
+            margin: 15px 0;
+            color: var(--light-grey);
+        }
+
+        .contact-info a {
+            color: var(--red);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-buttons {
+            margin-top: 30px;
         }
 
         /* REGISTRATION */
 
-        .registration {
-            background: white;
+        .register {
+            background: #151515;
+            text-align: center;
         }
 
-        form {
+        .registration-form {
             max-width: 700px;
-            margin: auto;
-            padding: 30px;
-            background: #f4f4f4;
+            margin: 35px auto 0;
+            text-align: left;
+            background: #080808;
+            padding: 35px;
             border-radius: 8px;
+            border-top: 4px solid var(--red);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
         }
 
         .form-group {
             margin-bottom: 20px;
         }
 
-        label {
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
             display: block;
-            font-weight: bold;
             margin-bottom: 8px;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 13px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-            background: white;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 15px;
-            background: var(--red);
-            color: white;
-            font-size: 17px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .submit-button:hover {
-            background: #b80000;
-        }
-
-        #message {
-            margin-top: 15px;
-            text-align: center;
-            color: #b80000;
             font-weight: bold;
         }
 
-        /* CONTACT */
-
-        .contact {
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #444444;
             background: #1b1b1b;
-            color: white;
-            text-align: center;
+            color: #ffffff;
+            border-radius: 5px;
+            font-size: 15px;
         }
 
-        .contact .section-subtitle {
-            color: #ccc;
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--red);
         }
 
-        .contact p {
-            margin: 8px 0;
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .registration-form button {
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-note {
+            color: #aaaaaa;
+            font-size: 13px;
+            margin-top: 15px;
         }
 
         /* FOOTER */
 
         footer {
-            background: #000;
-            color: #aaa;
+            background: #000000;
+            padding: 25px 0;
             text-align: center;
-            padding: 25px;
+            border-top: 2px solid var(--red);
+        }
+
+        footer p {
+            color: #aaaaaa;
+            font-size: 14px;
         }
 
         footer span {
             color: var(--red);
         }
 
-        /* MOBILE RESPONSIVENESS */
+        /* RESPONSIVE DESIGN */
 
-        @media (max-width: 900px) {
-            .program-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .highlights {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .values-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            header {
+        @media (max-width: 1000px) {
+            .navbar {
                 flex-direction: column;
-                text-align: center;
             }
 
             nav {
                 justify-content: center;
-                gap: 12px;
             }
 
-            nav a {
-                font-size: 14px;
+            .program-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
             }
 
             .hero {
-                padding: 65px 6%;
+                min-height: 500px;
             }
 
             .hero h1 {
-                font-size: 38px;
+                font-size: 42px;
             }
 
-            .hero h2 {
-                font-size: 19px;
+            .hero p {
+                font-size: 17px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .values-grid,
+            .gallery-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
             }
 
             .program-grid {
                 grid-template-columns: 1fr;
             }
 
-            .highlights {
+            .form-grid {
                 grid-template-columns: 1fr;
             }
 
-            .section-title {
-                font-size: 28px;
+            .registration-form {
+                padding: 25px 20px;
             }
 
-            form {
-                padding: 20px;
+            .btn-outline {
+                margin: 15px 0 0;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 13px;
             }
         }
     </style>
@@ -418,20 +550,26 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- NAVIGATION -->
     <header>
-        <div class="logo">
-            TOPSPOT <span>SOCCER ACADEMY</span>
-        </div>
+        <div class="container navbar">
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#programs">Programs</a>
-            <a href="#values">Values</a>
-            <a href="#contact">Contact</a>
-            <a href="#registration" class="nav-button">Register</a>
-        </nav>
+            <a href="#home" class="logo">
+                TOP<span>SPOT</span> SOCCER
+            </a>
+
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#programs">Programs</a>
+                <a href="#values">Values</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#achievements">Achievements</a>
+                <a href="#contact">Contact</a>
+                <a href="#register" class="nav-register">Register</a>
+            </nav>
+
+        </div>
     </header>
 
     <!-- HOME -->
@@ -439,316 +577,423 @@
         <div class="hero-content">
 
             <h1>
-                TOPSPOT<br>
-                <span>SOCCER ACADEMY</span>
+                Developing Talent.<br>
+                <span>Building Champions.</span>
             </h1>
 
-            <h2>Developing Talent. Building Champions.</h2>
-
             <p>
-                We nurture young football talent through quality coaching,
-                discipline, teamwork and character development. Our mission
-                is to help every player discover their potential and become
-                the best version of themselves.
+                Welcome to TopSpot Soccer Academy — where passion meets
+                discipline, talent is nurtured, and champions are developed.
             </p>
 
-            <a href="#registration" class="button button-red">
-                Join Our Academy
-            </a>
+            <a href="#programs" class="btn">Explore Our Programs</a>
 
-            <a href="#about" class="button button-outline">
-                Learn More
-            </a>
+            <a href="#register" class="btn btn-outline">Join the Academy</a>
 
         </div>
     </section>
 
     <!-- HIGHLIGHTS -->
-    <div class="highlights">
+    <section class="highlights">
+        <div class="container highlight-grid">
 
-        <div class="highlight">
-            <h3>Player Development</h3>
-            <p>Technical and tactical growth</p>
+            <div class="highlight-item">
+                <h3>⚽ Football</h3>
+                <p>Developing technical and tactical skills</p>
+            </div>
+
+            <div class="highlight-item">
+                <h3>🏆 Excellence</h3>
+                <p>Building a winning mentality</p>
+            </div>
+
+            <div class="highlight-item">
+                <h3>🤝 Teamwork</h3>
+                <p>Growing together on and off the pitch</p>
+            </div>
+
         </div>
-
-        <div class="highlight">
-            <h3>Competition</h3>
-            <p>Matches and tournaments</p>
-        </div>
-
-        <div class="highlight">
-            <h3>Education</h3>
-            <p>Discipline and leadership</p>
-        </div>
-
-        <div class="highlight">
-            <h3>Opportunity</h3>
-            <p>Football progression pathways</p>
-        </div>
-
-    </div>
+    </section>
 
     <!-- ABOUT -->
     <section class="about" id="about">
+        <div class="container about-content">
 
-        <h2 class="section-title">
-            About <span>TopSpot</span>
-        </h2>
-
-        <p class="section-subtitle">
-            Passion for football. Commitment to excellence.
-        </p>
-
-        <div class="about-content">
+            <h2>About <span>TopSpot</span></h2>
 
             <p>
-                TopSpot Soccer Academy is dedicated to identifying,
-                nurturing and developing young football talent.
-                We provide structured training that develops players'
-                technical abilities, tactical understanding, fitness
-                and confidence.
+                TopSpot Soccer Academy is committed to nurturing young football
+                talent and developing well-rounded players through structured
+                training, discipline, teamwork, and a passion for the game.
             </p>
 
             <p>
-                Beyond football, we emphasize discipline, respect,
-                teamwork, integrity and education. We aim to develop
-                responsible individuals who can succeed both on
-                and off the pitch.
+                Our goal is to create an environment where every player has
+                the opportunity to learn, grow, improve, and reach their
+                full potential both on and off the pitch.
+            </p>
+
+            <p>
+                We believe that football is more than just a game.
+                It is a platform for building character, confidence,
+                leadership, and lifelong values.
             </p>
 
         </div>
-
     </section>
 
     <!-- PROGRAMS -->
     <section class="programs" id="programs">
+        <div class="container">
 
-        <h2 class="section-title">
-            Our Training <span>Programs</span>
-        </h2>
+            <h2>Our <span>Programs</span></h2>
 
-        <p class="section-subtitle">
-            Training designed for every stage of a player's development.
-        </p>
+            <p class="section-intro">
+                Structured football development programs designed to nurture
+                talent at every stage of a player's journey.
+            </p>
 
-        <div class="program-grid">
+            <div class="program-grid">
 
-            <div class="program-card">
-                <div class="age">U7 – U9</div>
-                <h3>Foundation</h3>
-                <p>
-                    Fun introduction to football, coordination,
-                    ball mastery and basic technical skills.
-                </p>
+                <div class="program-card">
+                    <h3>U7 – U9</h3>
+                    <p><strong>Foundation</strong></p>
+                    <p>
+                        Introduction to football, basic ball control,
+                        coordination, confidence, and fun.
+                    </p>
+                </div>
+
+                <div class="program-card">
+                    <h3>U10 – U12</h3>
+                    <p><strong>Development</strong></p>
+                    <p>
+                        Technical improvement, passing, dribbling,
+                        teamwork, and understanding the game.
+                    </p>
+                </div>
+
+                <div class="program-card">
+                    <h3>U13 – U15</h3>
+                    <p><strong>Performance</strong></p>
+                    <p>
+                        Tactical awareness, physical development,
+                        competitive match preparation, and discipline.
+                    </p>
+                </div>
+
+                <div class="program-card">
+                    <h3>U16 – U19</h3>
+                    <p><strong>Elite Pathway</strong></p>
+                    <p>
+                        Advanced training, competitive exposure,
+                        leadership, and preparation for higher levels.
+                    </p>
+                </div>
+
             </div>
-
-            <div class="program-card">
-                <div class="age">U10 – U12</div>
-                <h3>Development</h3>
-                <p>
-                    Building passing, movement, ball control,
-                    teamwork and football understanding.
-                </p>
-            </div>
-
-            <div class="program-card">
-                <div class="age">U13 – U15</div>
-                <h3>Performance</h3>
-                <p>
-                    Advanced technical training, fitness,
-                    tactical awareness and competitive preparation.
-                </p>
-            </div>
-
-            <div class="program-card">
-                <div class="age">U16 – U19</div>
-                <h3>Elite Pathway</h3>
-                <p>
-                    High-performance development and preparation
-                    for advanced competitive football.
-                </p>
-            </div>
-
         </div>
-
     </section>
 
     <!-- VALUES -->
     <section class="values" id="values">
+        <div class="container">
 
-        <h2 class="section-title">
-            Our Core <span>Values</span>
-        </h2>
+            <h2>Our Core <span>Values</span></h2>
 
-        <p class="section-subtitle">
-            The principles that guide every TopSpot player.
-        </p>
+            <div class="values-grid">
 
-        <div class="values-grid">
+                <div class="value-card">
+                    <h3>Discipline</h3>
+                    <p>
+                        We instil respect, commitment, responsibility,
+                        and dedication in every player.
+                    </p>
+                </div>
 
-            <div class="value-card">
-                <h3>Discipline</h3>
-                <p>
-                    Commitment, responsibility and respect
-                    both on and off the pitch.
-                </p>
+                <div class="value-card">
+                    <h3>Teamwork</h3>
+                    <p>
+                        We believe success comes through unity,
+                        cooperation, and supporting one another.
+                    </p>
+                </div>
+
+                <div class="value-card">
+                    <h3>Excellence</h3>
+                    <p>
+                        We encourage every player to strive for continuous
+                        improvement and give their best every day.
+                    </p>
+                </div>
+
             </div>
-
-            <div class="value-card">
-                <h3>Teamwork</h3>
-                <p>
-                    Working together, supporting teammates
-                    and achieving collective success.
-                </p>
-            </div>
-
-            <div class="value-card">
-                <h3>Excellence</h3>
-                <p>
-                    Hard work, continuous improvement
-                    and the pursuit of excellence.
-                </p>
-            </div>
-
         </div>
-
     </section>
 
-    <!-- REGISTRATION -->
-    <section class="registration" id="registration">
+    <!-- GALLERY -->
+    <section class="gallery" id="gallery">
+        <div class="container">
 
-        <h2 class="section-title">
-            Player <span>Registration</span>
-        </h2>
+            <h2>Our <span>Gallery</span></h2>
 
-        <p class="section-subtitle">
-            Register your interest in joining TopSpot Soccer Academy.
-        </p>
+            <p class="section-intro">
+                A glimpse into our training sessions, matches,
+                tournaments, and life at TopSpot Soccer Academy.
+                Our journey, captured through moments on and off the pitch.
+            </p>
 
-        <form id="playerForm">
+            <div class="gallery-grid">
 
-            <div class="form-group">
-                <label for="playerName">Player's Full Name</label>
-                <input type="text" id="playerName"
-                       placeholder="Enter player's full name" required>
+                <div class="gallery-item">
+                    <div class="photo-placeholder">Add Photo 1</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="photo-placeholder">Add Photo 2</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="photo-placeholder">Add Photo 3</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="photo-placeholder">Add Photo 4</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="photo-placeholder">Add Photo 5</div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="photo-placeholder">Add Photo 6</div>
+                </div>
+
             </div>
+        </div>
+    </section>
 
-            <div class="form-group">
-                <label for="dob">Date of Birth</label>
-                <input type="date" id="dob" required>
+    <!-- ACHIEVEMENTS -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+
+            <h2>Our <span>Achievements</span></h2>
+
+            <p class="section-intro">
+                Celebrating our milestones, progress, and success.
+                Every achievement reflects the hard work, discipline,
+                and commitment of our players and coaches.
+            </p>
+
+            <div class="achievement-grid">
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">🏆</div>
+                    <h3>Tournament Success</h3>
+                    <p>
+                        Celebrating competitive performances,
+                        tournament participation, and victories.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">⚽</div>
+                    <h3>Player Development</h3>
+                    <p>
+                        Supporting players in improving their skills
+                        and progressing to higher levels.
+                    </p>
+                </div>
+
+                <div class="achievement-card">
+                    <div class="achievement-icon">🥇</div>
+                    <h3>Individual Excellence</h3>
+                    <p>
+                        Recognising outstanding talent, discipline,
+                        leadership, and dedication.
+                    </p>
+                </div>
+
             </div>
-
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select id="gender" required>
-                    <option value="">Select gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="program">Training Program</label>
-                <select id="program" required>
-                    <option value="">Select age group</option>
-                    <option value="U7-U9">U7 – U9 Foundation</option>
-                    <option value="U10-U12">U10 – U12 Development</option>
-                    <option value="U13-U15">U13 – U15 Performance</option>
-                    <option value="U16-U19">U16 – U19 Elite Pathway</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="parentName">Parent / Guardian Name</label>
-                <input type="text" id="parentName"
-                       placeholder="Enter parent or guardian's name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone"
-                       placeholder="e.g. 0712345678" required>
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email"
-                       placeholder="Enter email address">
-            </div>
-
-            <div class="form-group">
-                <label for="experience">Football Experience</label>
-                <textarea id="experience" rows="4"
-                          placeholder="Describe player's football experience"></textarea>
-            </div>
-
-            <button type="submit" class="submit-button">
-                Submit Registration
-            </button>
-
-            <p id="message"></p>
-
-        </form>
-
+        </div>
     </section>
 
     <!-- CONTACT -->
     <section class="contact" id="contact">
+        <div class="container">
 
-        <h2 class="section-title">
-            Contact <span>Us</span>
-        </h2>
+            <h2>Contact <span>Us</span></h2>
 
-        <p class="section-subtitle">
-            Get in touch with TopSpot Soccer Academy.
-        </p>
+            <p class="section-intro">
+                Interested in joining TopSpot Soccer Academy?
+                Get in touch with us today.
+            </p>
 
-        <p><strong>Location:</strong> Kahawa Sukari</p>
-        <p><strong>Phone:</strong> 0795469246</p>
+            <div class="contact-info">
 
+                <p>
+                    <strong>📍 Location:</strong>
+                    Kahawa Sukari, Nairobi
+                </p>
+
+                <p>
+                    <strong>📞 Phone:</strong>
+                    <a href="tel:0795469246">0795469246</a>
+                </p>
+
+                <p>
+                    <strong>💬 WhatsApp:</strong>
+                    <a href="https://wa.me/254795469246" target="_blank"
+                       rel="noopener noreferrer">
+                        Chat with us on WhatsApp
+                    </a>
+                </p>
+
+            </div>
+
+            <div class="contact-buttons">
+                <a href="tel:0795469246" class="btn">Call Us</a>
+
+                <a href="https://wa.me/254795469246" class="btn btn-outline"
+                   target="_blank" rel="noopener noreferrer">
+                    WhatsApp Us
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- REGISTRATION -->
+    <section class="register" id="register">
+        <div class="container">
+
+            <h2>Join <span>TopSpot</span></h2>
+
+            <p class="section-intro">
+                Register your interest and take the first step
+                towards your football journey with us.
+            </p>
+
+            <form class="registration-form" id="registrationForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="playerName">Player's Full Name *</label>
+                        <input type="text" id="playerName"
+                               name="playerName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth *</label>
+                        <input type="date" id="dob"
+                               name="dob" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender *</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ageGroup">Age Group *</label>
+                        <select id="ageGroup" name="ageGroup" required>
+                            <option value="">Select Age Group</option>
+                            <option value="U7-U9">U7 – U9 (Foundation)</option>
+                            <option value="U10-U12">U10 – U12 (Development)</option>
+                            <option value="U13-U15">U13 – U15 (Performance)</option>
+                            <option value="U16-U19">U16 – U19 (Elite Pathway)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guardianName">Parent / Guardian Name *</label>
+                        <input type="text" id="guardianName"
+                               name="guardianName" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Parent / Guardian Phone *</label>
+                        <input type="tel" id="phone" name="phone"
+                               placeholder="07XXXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address (Optional)</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Previous Football Experience</label>
+                        <select id="experience" name="experience">
+                            <option value="">Select Experience</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Some experience">Some experience</option>
+                            <option value="Experienced player">Experienced player</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message"
+                                  placeholder="Any additional information you'd like us to know..."></textarea>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="btn">
+                    Submit Registration
+                </button>
+
+                <p class="form-note">
+                    This is a demonstration form. To receive registrations,
+                    it needs to be connected to email, WhatsApp, or a database.
+                </p>
+
+            </form>
+
+        </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
+        <div class="container">
 
-        <p>
-            &copy; 2026 <span>TopSpot Soccer Academy</span>.
-            All rights reserved.
-        </p>
+            <p>
+                &copy; <span id="year"></span>
+                <strong>TopSpot Soccer Academy.</strong>
+                All Rights Reserved.
+            </p>
 
-        <p>Developing Talent. Building Champions.</p>
+            <p>Developing Talent. Building Champions.</p>
 
+        </div>
     </footer>
 
     <!-- JAVASCRIPT -->
     <script>
+        // Automatically update the copyright year
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
 
-        // Player registration form demonstration
+        // Demo registration form
+        document.getElementById("registrationForm")
+            .addEventListener("submit", function(event) {
 
-        const playerForm = document.getElementById("playerForm");
+                event.preventDefault();
 
-        playerForm.addEventListener("submit", function(event) {
+                alert(
+                    "Thank you for your interest in TopSpot Soccer Academy! " +
+                    "Please contact us on 0795469246 to complete registration."
+                );
 
-            event.preventDefault();
-
-            const playerName =
-                document.getElementById("playerName").value;
-
-            document.getElementById("message").textContent =
-                "Thank you, " + playerName +
-                "! Your form has been submitted successfully.";
-
-            playerForm.reset();
-
-        });
-
-        // Prevent future birth dates
-
-        document.getElementById("dob").max =
-            new Date().toISOString().split("T")[0];
-
+                this.reset();
+            });
     </script>
 
 </body>
 </html>
-
