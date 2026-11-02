@@ -1,1 +1,755 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopSpot Soccer Academy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #111;
+            line-height: 1.6;
+        }
+
+        :root {
+            --red: #e50914;
+            --black: #111111;
+            --dark: #1b1b1b;
+            --white: #ffffff;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            background: var(--black);
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--red);
+        }
+
+        .logo span {
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: var(--red);
+        }
+
+        .nav-button {
+            background: var(--red);
+            padding: 10px 18px;
+            border-radius: 5px;
+        }
+
+        .nav-button:hover {
+            background: #b80000;
+            color: white;
+        }
+
+        /* HERO */
+
+        .hero {
+            background: linear-gradient(135deg, #111, #400000);
+            color: white;
+            padding: 100px 8%;
+            min-height: 450px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--red);
+        }
+
+        .hero h2 {
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #ddd;
+            font-size: 17px;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .button-red {
+            background: var(--red);
+            color: white;
+        }
+
+        .button-red:hover {
+            background: #b80000;
+        }
+
+        .button-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .button-outline:hover {
+            background: white;
+            color: black;
+        }
+
+        /* HIGHLIGHTS */
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: white;
+            padding: 30px 7%;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .highlight h3 {
+            color: var(--red);
+            margin-bottom: 8px;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 70px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section-title span {
+            color: var(--red);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* PROGRAMS */
+
+        .programs {
+            background: #f4f4f4;
+        }
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .program-card {
+            background: white;
+            border-bottom: 5px solid var(--red);
+            padding: 25px;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .program-card h3 {
+            color: var(--red);
+            margin-bottom: 12px;
+        }
+
+        .age {
+            font-size: 24px;
+            font-weight: bold;
+            color: #111;
+            margin-bottom: 10px;
+        }
+
+        /* VALUES */
+
+        .values {
+            background: var(--black);
+            color: white;
+        }
+
+        .values .section-subtitle {
+            color: #ccc;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .value-card {
+            background: #222;
+            padding: 30px;
+            border-left: 4px solid var(--red);
+            border-radius: 5px;
+        }
+
+        .value-card h3 {
+            color: var(--red);
+            margin-bottom: 12px;
+        }
+
+        /* REGISTRATION */
+
+        .registration {
+            background: white;
+        }
+
+        form {
+            max-width: 700px;
+            margin: auto;
+            padding: 30px;
+            background: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background: white;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 15px;
+            background: var(--red);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #b80000;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            color: #b80000;
+            font-weight: bold;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #1b1b1b;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-subtitle {
+            color: #ccc;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #000;
+            color: #aaa;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer span {
+            color: var(--red);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+
+        @media (max-width: 900px) {
+            .program-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .highlights {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 65px 6%;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 19px;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            form {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            TOPSPOT <span>SOCCER ACADEMY</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#programs">Programs</a>
+            <a href="#values">Values</a>
+            <a href="#contact">Contact</a>
+            <a href="#registration" class="nav-button">Register</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+
+            <h1>
+                TOPSPOT<br>
+                <span>SOCCER ACADEMY</span>
+            </h1>
+
+            <h2>Developing Talent. Building Champions.</h2>
+
+            <p>
+                We nurture young football talent through quality coaching,
+                discipline, teamwork and character development. Our mission
+                is to help every player discover their potential and become
+                the best version of themselves.
+            </p>
+
+            <a href="#registration" class="button button-red">
+                Join Our Academy
+            </a>
+
+            <a href="#about" class="button button-outline">
+                Learn More
+            </a>
+
+        </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <div class="highlights">
+
+        <div class="highlight">
+            <h3>Player Development</h3>
+            <p>Technical and tactical growth</p>
+        </div>
+
+        <div class="highlight">
+            <h3>Competition</h3>
+            <p>Matches and tournaments</p>
+        </div>
+
+        <div class="highlight">
+            <h3>Education</h3>
+            <p>Discipline and leadership</p>
+        </div>
+
+        <div class="highlight">
+            <h3>Opportunity</h3>
+            <p>Football progression pathways</p>
+        </div>
+
+    </div>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            About <span>TopSpot</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Passion for football. Commitment to excellence.
+        </p>
+
+        <div class="about-content">
+
+            <p>
+                TopSpot Soccer Academy is dedicated to identifying,
+                nurturing and developing young football talent.
+                We provide structured training that develops players'
+                technical abilities, tactical understanding, fitness
+                and confidence.
+            </p>
+
+            <p>
+                Beyond football, we emphasize discipline, respect,
+                teamwork, integrity and education. We aim to develop
+                responsible individuals who can succeed both on
+                and off the pitch.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PROGRAMS -->
+    <section class="programs" id="programs">
+
+        <h2 class="section-title">
+            Our Training <span>Programs</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Training designed for every stage of a player's development.
+        </p>
+
+        <div class="program-grid">
+
+            <div class="program-card">
+                <div class="age">U7 – U9</div>
+                <h3>Foundation</h3>
+                <p>
+                    Fun introduction to football, coordination,
+                    ball mastery and basic technical skills.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="age">U10 – U12</div>
+                <h3>Development</h3>
+                <p>
+                    Building passing, movement, ball control,
+                    teamwork and football understanding.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="age">U13 – U15</div>
+                <h3>Performance</h3>
+                <p>
+                    Advanced technical training, fitness,
+                    tactical awareness and competitive preparation.
+                </p>
+            </div>
+
+            <div class="program-card">
+                <div class="age">U16 – U19</div>
+                <h3>Elite Pathway</h3>
+                <p>
+                    High-performance development and preparation
+                    for advanced competitive football.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VALUES -->
+    <section class="values" id="values">
+
+        <h2 class="section-title">
+            Our Core <span>Values</span>
+        </h2>
+
+        <p class="section-subtitle">
+            The principles that guide every TopSpot player.
+        </p>
+
+        <div class="values-grid">
+
+            <div class="value-card">
+                <h3>Discipline</h3>
+                <p>
+                    Commitment, responsibility and respect
+                    both on and off the pitch.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Teamwork</h3>
+                <p>
+                    Working together, supporting teammates
+                    and achieving collective success.
+                </p>
+            </div>
+
+            <div class="value-card">
+                <h3>Excellence</h3>
+                <p>
+                    Hard work, continuous improvement
+                    and the pursuit of excellence.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- REGISTRATION -->
+    <section class="registration" id="registration">
+
+        <h2 class="section-title">
+            Player <span>Registration</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Register your interest in joining TopSpot Soccer Academy.
+        </p>
+
+        <form id="playerForm">
+
+            <div class="form-group">
+                <label for="playerName">Player's Full Name</label>
+                <input type="text" id="playerName"
+                       placeholder="Enter player's full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" required>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" required>
+                    <option value="">Select gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="program">Training Program</label>
+                <select id="program" required>
+                    <option value="">Select age group</option>
+                    <option value="U7-U9">U7 – U9 Foundation</option>
+                    <option value="U10-U12">U10 – U12 Development</option>
+                    <option value="U13-U15">U13 – U15 Performance</option>
+                    <option value="U16-U19">U16 – U19 Elite Pathway</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="parentName">Parent / Guardian Name</label>
+                <input type="text" id="parentName"
+                       placeholder="Enter parent or guardian's name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone"
+                       placeholder="e.g. 0712345678" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email"
+                       placeholder="Enter email address">
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Football Experience</label>
+                <textarea id="experience" rows="4"
+                          placeholder="Describe player's football experience"></textarea>
+            </div>
+
+            <button type="submit" class="submit-button">
+                Submit Registration
+            </button>
+
+            <p id="message"></p>
+
+        </form>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Us</span>
+        </h2>
+
+        <p class="section-subtitle">
+            Get in touch with TopSpot Soccer Academy.
+        </p>
+
+        <p><strong>Location:</strong> Your academy location</p>
+        <p><strong>Phone:</strong> Your contact number</p>
+        <p><strong>Email:</strong> Your academy email</p>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            &copy; 2026 <span>TopSpot Soccer Academy</span>.
+            All rights reserved.
+        </p>
+
+        <p>Developing Talent. Building Champions.</p>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Player registration form demonstration
+
+        const playerForm = document.getElementById("playerForm");
+
+        playerForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const playerName =
+                document.getElementById("playerName").value;
+
+            document.getElementById("message").textContent =
+                "Thank you, " + playerName +
+                "! Your form has been submitted successfully.";
+
+            playerForm.reset();
+
+        });
+
+        // Prevent future birth dates
+
+        document.getElementById("dob").max =
+            new Date().toISOString().split("T")[0];
+
+    </script>
+
+</body>
+</html>
+
